@@ -56,8 +56,7 @@ function handleForm(event: Event) {
         return;
     }
     
-    const result = getInitials(fullName);
-    output.textContent = result;
+    output.textContent = getInitials(fullName);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
