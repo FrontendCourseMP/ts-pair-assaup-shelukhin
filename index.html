@@ -15,6 +15,27 @@
             <button type="submit" class="btn">Преобразовать</button>
         </form>
         <output class="result">Вывод:</output>
+        <div class="container">
+        <p>Калькулятор математических выражениц</p>
+        
+        <form  class="math-form">
+            <div class="form-group">
+                <label for="expression">Математическое выражение:</label>
+                <input 
+                    type="text" 
+                    id="expression" 
+                    placeholder="2+2"
+                    class="math-input"
+                    required
+                >
+                <div id="expressionError" class="math-error error"></div>
+            </div>
+            
+            <button type="submit" class="math-submit">Вычислить</button>
+        </form>
+        
+        <output class="result math-result">Вывод:</output>
+    </div>
     </header>
     <script type="module" src="./dist/index.js"></script>
 </body>
