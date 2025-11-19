@@ -4,4 +4,3 @@ document.addEventListener('DOMContentLoaded', () => {
     initialsModule.initForm();
     calculatorModule.initCalculator();
 });
-//# sourceMappingURL=index.js.map
