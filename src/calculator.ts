@@ -71,7 +71,7 @@ function handleMathForm(event: Event) {
     const expression = input.value;
     
     errorDiv.textContent = '';
-    resultDiv.style.display = 'none';
+    resultDiv.style.display = 'block';
     
     const result = calculateExpression(expression);
     

@@ -1,6 +1,3 @@
-// initials.ts
-
-// Объявляем функции
 function getInitials(fullName: string): string {
     const parts = fullName.trim().split(/\s+/).filter(part => part.length > 0);
     
