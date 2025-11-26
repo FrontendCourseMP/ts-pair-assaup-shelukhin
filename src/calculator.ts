@@ -1,4 +1,4 @@
-function calculateExpression(expression: string): string {
+function validateExpression(expression: string): string | null {
     const trimmedExpression = expression.trim();
     
     if (trimmedExpression === '') {
@@ -23,6 +23,17 @@ function calculateExpression(expression: string): string {
             (trimmedExpression[i + 1] === '+' || trimmedExpression[i + 1] === '*')) {
             return 'Ошибка: Не может быть двух операторов подряд';
         }
+    }
+    
+    return null;
+}
+
+function calculateExpression(expression: string): string {
+    const trimmedExpression = expression.trim();
+    
+    const validationError = validateExpression(trimmedExpression);
+    if (validationError) {
+        return validationError;
     }
     
     try {
@@ -90,6 +101,7 @@ function initCalculator() {
 }
 
 export default {
+    validateExpression,
     calculateExpression,
     handleMathForm,
     initCalculator
