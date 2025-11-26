@@ -1,36 +1,14 @@
 function getInitials(fullName: string): string {
     const parts = fullName.trim().split(/\s+/).filter(part => part.length > 0);
     
-    if (parts.length < 3) {
+    const [lastName, firstName, middleName] = parts;
+    
+    if (!lastName || !firstName || !middleName) {
         return 'Ошибка: Введите Фамилию Имя Отчество (три слова)';
-    }
-    
-    const lastName = parts[0];
-    const firstName = parts[1];
-    const middleName = parts[2];
-    
-    if (!lastName || lastName.length === 0) {
-        return 'Ошибка: Фамилия не может быть пустой';
-    }
-    
-    if (!firstName || firstName.length === 0) {
-        return 'Ошибка: Имя не может быть пустым';
-    }
-    
-    if (!middleName || middleName.length === 0) {
-        return 'Ошибка: Отчество не может быть пустым';
     }
     
     const firstInitial = firstName.charAt(0);
     const middleInitial = middleName.charAt(0);
-    
-    if (!firstInitial) {
-        return 'Ошибка: Не удалось получить инициал имени';
-    }
-    
-    if (!middleInitial) {
-        return 'Ошибка: Не удалось получить инициал отчества';
-    }
     
     const formattedLastName = lastName.charAt(0).toUpperCase() + 
                              lastName.slice(1).toLowerCase();
